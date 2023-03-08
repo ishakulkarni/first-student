@@ -1,0 +1,30 @@
+GET http://localhost:8080/api/v1/student
+
+PUT http://localhost:8080/api/v1/student/1?name=harriett
+PUT http://localhost:8080/api/v1/student/1?name=harriett&email=hariett@hogwarts.edu
+
+DELETE http://localhost:8080/api/v1/student/2
+
+POST http://localhost:8080/api/v1/student
+
+JSON body:
+{
+  "name": "Hermione",
+  "email": "hermione@hogwarts.edu",
+  "dob": "2011-01-01"
+}
+
+/*
+notes:
+
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.hibernate.ddl-auto=update
+
+If your spring boot app is connecting with the database but not creating the tables add this line in application.properties file
+spring.jpa.generate-ddl=true
+
+
+anyone who has trouble getting the JSON to display at the API Layer section of the video, try adding:
+"@ComponentScan(basePackageClasses = StudentController.class" in 
+the line immediately after "@SpringBootApplication" in the "DemoApplication.java" file.
+*/
